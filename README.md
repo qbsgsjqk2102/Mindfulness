@@ -4,6 +4,13 @@ An interactive, zero-clutter web dashboard designed for somatic grounding, atten
 
 ---
 
+## Live Demo
+
+Try the live application directly in your browser:
+**https://mindfulness-bamjgj5nyszq4ksg9bqy5j.streamlit.app/**
+
+---
+
 ## Overview
 
 The platform strips away abstract esoteric advice and focuses on practical, evidence-grounded mechanisms to de-escalate workday overload, re-establish physiological baseline, and reduce mental residue.
@@ -40,37 +47,6 @@ Mindfulness/
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10 or higher
-- Git
-
-### Installation
-
-1. Clone the repository:
-   git clone [https://github.com/qbsgsjqk2102/Mindfulness.git](https://github.com/qbsgsjqk2102/Mindfulness.git)
-   cd Mindfulness
-
-2. Create and activate a virtual environment:
-   macOS / Linux:
-     python3 -m venv venv
-     source venv/bin/activate
-   Windows:
-     python -m venv venv
-     venv\Scripts\activate
-
-3. Install dependencies:
-   pip install -r requirements.txt
-
-4. Launch the application:
-   streamlit run app.py
-
-The dashboard will open automatically in your browser at http://localhost:8501.
-
----
-
 ## Database Architecture
 
 The application automatically initializes an embedded SQLite database (journal.db) on first launch:
@@ -89,23 +65,23 @@ CREATE TABLE IF NOT EXISTS journal (
 
 ---
 
-## Deployment (Streamlit Cloud)
+## Local Development
 
-1. Push your local changes to GitHub:
-   git add .
-   git commit -m "feat: complete platform setup"
-   git push origin main
+If you want to run the project locally:
 
-2. Log in to Streamlit Community Cloud ([https://share.streamlit.io/](https://share.streamlit.io/)) using your GitHub account.
-3. Click New app.
-4. Configure application settings:
-   - Repository: qbsgsjqk2102/Mindfulness
-   - Branch: main
-   - Main file path: app.py
-5. Click Deploy.
+1. Clone repo:
+   git clone https://github.com/qbsgsjqk2102/Mindfulness.git
+   cd Mindfulness
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Run app:
+   streamlit run app.py
 
 ---
 
 ## License
 
 Distributed under the MIT License. See LICENSE for details.
+
