@@ -1,0 +1,3 @@
+echo "journal.db" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo ".venv/" >> .gitignore
