@@ -4,7 +4,6 @@ import time
 import sqlite3
 from datetime import datetime
 
-# --- DATABASE SETUP (SQLite) ---
 DB_NAME = "journal.db"
 
 def init_db():
@@ -50,14 +49,13 @@ def delete_entry(entry_id):
 
 init_db()
 
-# Page Configuration
 st.set_page_config(
     page_title="Mindfulness & Mental Clarity",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom High-Contrast, Elegant Styling (No Emojis, Clear Hierarchy)
+
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
@@ -170,11 +168,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Session Storage
+# session storage
 if "journal_entries" not in st.session_state:
     st.session_state.journal_entries = []
 
-# Sidebar Navigation
+# sidebar navigation
 with st.sidebar:
     st.markdown("### Navigation")
     section = st.radio(
@@ -192,8 +190,8 @@ with st.sidebar:
     **Mindfulness Platform**  
     A minimalist tool for grounding, attention hygiene, and active cognitive recovery.
     """)
-
-# SECTION 1: PRACTICAL ARTICLES
+    
+# section1
 if section == "Practical Articles":
     st.markdown("## Practical Insights & Guides")
     st.markdown(
@@ -286,7 +284,7 @@ End your workday with a concrete ritual: close work software, check your agenda 
             with st.expander("Read Article"):
                 st.markdown(art["body"])
 
-# SECTION 2: PRACTICES WITH ANIMATION
+# section2
 elif section == "Breathing & Somatics":
     st.markdown("## Interactive Somatic Practices")
     st.markdown("Follow the visual rhythm to reset autonomic tone and regain physical composure.")
@@ -299,7 +297,7 @@ elif section == "Breathing & Somatics":
 
         with col_anim:
             st.markdown("#### Visual Breathing Anchor")
-            # CSS Animation Circle
+            
             components.html("""
             <!DOCTYPE html>
             <html>
@@ -371,19 +369,19 @@ elif section == "Breathing & Somatics":
                 elapsed = 0
 
                 for cycle in range(cycles_input):
-                    # Inhale
+                
                     for s in range(4, 0, -1):
                         status_placeholder.markdown(f"### Inhale through nose... ({s}s)")
                         time.sleep(1)
                         elapsed += 1
                         progress_bar.progress(elapsed / total_duration)
-                    # Hold
+                    
                     for s in range(7, 0, -1):
                         status_placeholder.markdown(f"### Hold breath steady... ({s}s)")
                         time.sleep(1)
                         elapsed += 1
                         progress_bar.progress(elapsed / total_duration)
-                    # Exhale
+                    
                     for s in range(8, 0, -1):
                         status_placeholder.markdown(f"### Exhale completely... ({s}s)")
                         time.sleep(1)
@@ -456,7 +454,7 @@ elif section == "Breathing & Somatics":
         5. **1 Physical Sensation:** Notice your tongue resting comfortably at the roof of your mouth.
         """)
 
-# SECTION 3: GUIDED MEDITATIONS
+# section3
 elif section == "Guided Meditations":
     st.markdown("## Structured Meditation Sessions")
     st.markdown(
@@ -526,7 +524,7 @@ elif section == "Guided Meditations":
             timer_box.markdown("<h2 style='color:#7ee787;'>Session Completed</h2>", unsafe_allow_html=True)
             st.success("Practice recorded. Take a moment before returning to your screen.")
 
-# SECTION 4: CLARITY JOURNAL
+# section4
 elif section == "Clarity Journal":
     st.markdown("## Clarity & Attention Journal")
     st.markdown("Externalize mental noise to free up working memory. All reflections are persistently stored.")
